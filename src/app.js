@@ -52,3 +52,17 @@ const contactsList = [
 ]
 
 // Your code goes here
+
+const allContactsList = document.querySelector("#display_all_contacts")
+const displaySingleContact = document.querySelector("#display_single_contact")
+
+function loadContacts(contacts) {
+  toggleAllContacts(true)
+  for (contact of contacts) {
+    const html = `
+    <div class="contact" data-index=${contact.ID}><img src="img/${contact.image}" alt="Image of ${contact.image}"><p>${contact.name}</p>
+    </div>
+    `
+    allContactsList.insertAdjacentHTML("afterbegin", html)
+  }
+}
