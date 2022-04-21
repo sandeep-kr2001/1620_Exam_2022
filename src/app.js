@@ -51,8 +51,6 @@ const contactsList = [
   },
 ]
 
-// Your code goes here
-
 const allContactsList = document.querySelector("#display_all_contacts")
 const displaySingleContact = document.querySelector("#display_single_contact")
 
@@ -66,3 +64,16 @@ function loadContacts(contacts) {
     allContactsList.insertAdjacentHTML("afterbegin", html)
   }
 }
+
+function toggleAllContacts(showall) {
+  const toShow = showall ? allContactsList : displaySingleContact
+  const toHide = showall ? displaySingleContact : allContactsList
+
+  toShow.removeAttribute("style")
+  toHide.setAttribute("style", "display: none;")
+
+  if (showall) {
+    document.querySelector("#individual_contact")?.remove()
+  }
+}
+loadContacts(contactsList)
