@@ -26,9 +26,10 @@ img {
 .container {
   display: flex;
 
-
+  flex-direction: column;
   font-family: 'Inter', sans-serif;
   background-color: var(--white);
+  height: 100vh;
 }
 
 header {
@@ -56,8 +57,8 @@ header li {
 
 header a {
   text-decoration: none;
-
-
+  font-family: 'Inter', sans-serif;
+  color: var(--grey);
   font-size: 2rem;
 }
 
@@ -66,8 +67,11 @@ header a:hover {
 }
 
 main {
-
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
 }
+
 
 #individual_contact {
   display: flex;
@@ -89,14 +93,18 @@ main {
 #individual_contact p {
   font-size: 2rem;
   font-weight: 500;
+  color: var(--grey);
 }
 
 #individual_contact span {
-  font-size: 3rem;
   margin: 5px;
   background-color: var(--blue);
   height: 3rem;
   border-radius: 50px;
+}
+
+#individual_contact span > i {
+  font-size: 3rem;
 }
 
 #display_all_contacts {
@@ -104,6 +112,8 @@ main {
   flex-grow: 0;
   gap: 20px;
   padding: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 #display_all_contacts div {
@@ -114,6 +124,7 @@ main {
   border-radius: 5px;
   padding: 10px;
   align-items: center;
+  flex-grow: 1;
 }
 
 #display_all_contacts img {
@@ -138,4 +149,5 @@ footer p {
   font-size: 1.6rem;
   color: var(--grey);
   align-self: center;
+  font-family: 'Inter', sans-serif;
 }
